@@ -16,7 +16,7 @@ class JobOrchestrator:
         # Check which strategy is the good one
         for strategy in self.strategies:
             if strategy.can_handle(url):
-                print(f"Found a good strategy for this URL, running it...")
+                print(f"Finding the best scrap strategy...")
                 
                 # Run strategy extraction and save it here
                 data_fetched = strategy.extract_data(url)
