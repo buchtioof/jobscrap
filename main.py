@@ -1,3 +1,4 @@
+import os
 from contract import ScraperStrategy
 from orchestrator import JobOrchestrator
 from scrapers.wttj import WttjScraper
@@ -11,7 +12,7 @@ def main():
     
     # Give a URL
     with open("urls.txt", "r") as f:
-        for line in f:
+        for index, line in enumerate(f):
             url = line.strip()
             
             if url:
@@ -19,7 +20,15 @@ def main():
 
                 result = orchestrator.process_url(url)
 
-                print(result)
+                directory = "output"
+                os.makedirs(directory, exist_ok=True)
+                filename = f"offer_{index + 1}.md"
+                path = os.path.join(directory, filename)
+
+                with open(path, "w", encoding="utf-8") as mdfile:
+                    mdfile.write(result)
+                
+                print(f"Offers have been saved successfully")
 
 if __name__ == "__main__":
     main()

@@ -1,3 +1,4 @@
-./jobvenv
+jobvenv
 __pycache__
+output
 urls.txt
