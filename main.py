@@ -7,10 +7,10 @@ def main():
     orchestrator = JobOrchestrator()
     
     # Add the scraper strategy in orchestrator list
-    orchestrator.register_strategy(HelloWorkScraper())
+    orchestrator.register_strategy(WttjScraper())
     
     # Give a URL
-    url = "https://www.welcometothejungle.com/fr/companies/exemple/jobs/developpeur"
+    url = "https://www.welcometothejungle.com/fr/companies/la-poste-groupe/jobs/alternance-assistant-developpeur-full-stack-f-h_saint-denis"
     
     result = orchestrator.process_url(url)
     
