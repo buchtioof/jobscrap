@@ -24,8 +24,8 @@ class JobOrchestrator:
                 # Markdown formatter
                 return self._format_markdown(data_fetched)
         
-            # Else, error
-            return "ERROR: No scraper strategy found for this website."
+        # Else, error
+        return "ERROR: No scraper strategy found for this website."
 
     # Formatter for fetched data in Markdown
     def _format_markdown(self, data: dict) -> str:

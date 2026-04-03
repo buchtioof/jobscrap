@@ -1,6 +1,6 @@
 from contract import ScraperStrategy
 from orchestrator import JobOrchestrator
-from strategies import HelloWorkScraper
+from strategies import WttjScraper
 
 def main():
     # Create the object
