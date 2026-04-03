@@ -10,8 +10,9 @@ def main():
     orchestrator.register_strategy(WttjScraper())
     
     # Give a URL
-    url = "https://www.welcometothejungle.com/fr/companies/la-poste-groupe/jobs/alternance-assistant-developpeur-full-stack-f-h_saint-denis"
-    
+    with open("urls.txt", "r") as f:
+        url = f.read()
+        
     result = orchestrator.process_url(url)
     
     print(result)
