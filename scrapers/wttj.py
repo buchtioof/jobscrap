@@ -29,8 +29,22 @@ class WttjScraper(ScraperStrategy):
         company_name = soup.find('span', class_='sc-TezEC kuLxbv wui-text')
         company = company_name.text.strip() if company_name else "Company name not found"
 
+        corp_detail = soup.find('p', class_='sc-dBueTE eZfGrE')
+        company_detail = corp_detail.text.strip() if corp_detail else "No company details found"
+
+        desc_div = soup.find('div', attrs={'data-testid': 'job-section-description'})
+        if desc_div:
+            desc = "\n".join(desc_div.stripped_strings)
+
+        profile_div = soup.find('div', attrs={'data-testid': 'job-section-experience'})
+        if profile_div:
+            profile = "\n".join(profile_div.stripped_strings)
+
         return {
             "title": offer,
-            "company": company
+            "company": company,
+            "company_details": company_detail,
+            "description": desc,
+            "profile": profile
         }
         
