@@ -10,10 +10,10 @@ Paste offers URLs inside a txt file named "urls.txt", then run the script with t
 ## Roadmap
 - [x] Make it work
 - [x] Save scraped data in a clean Markdown file
-- [] Define scraper structure (wip)
-- [] Welcome to the Jungle scraper (wip)
-- [] HelloWork scraper
-- [] Linkedin scraper
+- [ ] Define scraper structure (wip)
+- [ ] Welcome to the Jungle scraper (wip)
+- [ ] HelloWork scraper
+- [ ] Linkedin scraper
 
 ## Credits
 BeautifulSoup and Playwright libraries
