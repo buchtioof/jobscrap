@@ -2,6 +2,7 @@ import os
 from contract import ScraperStrategy
 from orchestrator import JobOrchestrator
 from scrapers.wttj import WttjScraper
+from scrapers.passfr import PassScraper
 
 def main():
     # Create the object
@@ -9,6 +10,7 @@ def main():
     
     # Add the scraper strategy in orchestrator list
     orchestrator.register_strategy(WttjScraper())
+    orchestrator.register_strategy(PassScraper())
     
     # Give a URL
     with open("urls.txt", "r") as f:
