@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 class WttjScraper(ScraperStrategy):
     
     def can_handle(self, url: str) -> bool:
-        return "welcometothejungle.com" in url.lower()
+        return "pass.fonction-publique.gouv.fr" in url.lower()
 
     def extract_data(self, url: str) -> dict:
 
@@ -24,7 +24,7 @@ class WttjScraper(ScraperStrategy):
         # Call Beatifulsoup lib
         soup = BeautifulSoup(html_content, 'html.parser')
 
-        offer_title = soup.find('h2')
+        offer_title = soup.find('h1')
         offer = offer_title.text.strip() if offer_title else "Aucun titre n'a été trouvé"
 
         company_name = soup.find('span', class_='sc-TezEC kuLxbv wui-text')

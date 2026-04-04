@@ -28,7 +28,7 @@ def main():
                 with open(path, "w", encoding="utf-8") as mdfile:
                     mdfile.write(result)
                 
-                print(f"Offers have been saved successfully")
+                print(f"Offer have been saved successfully")
 
 if __name__ == "__main__":
     main()

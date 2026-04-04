@@ -29,4 +29,4 @@ class JobOrchestrator:
 
     # Formatter for fetched data in Markdown
     def _format_markdown(self, data: dict) -> str:
-        return f"# {data.get('title', 'Unknown title')} at {data.get('company', 'Unknown company')}\n\n## Comapny details\n {data.get('company_details', 'No company details found')}\n\n## Description\n{data.get('description', 'No description found')}\n\n## Profile\n{data.get('profile', 'No profile found')}"
+        return f"# {data.get('title', 'Titre inconnu')} à {data.get('company', 'Entreprise inconnue')}\n\n## Détails de l'entreprise\n {data.get('company_details', 'Aucun détail trouvé')}\n\n## Description\n{data.get('description', 'Aucune description trouvée')}\n\n## Profil du candidat\n{data.get('profile', 'Aucune donnée trouvée')}"

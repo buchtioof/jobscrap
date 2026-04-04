@@ -1,5 +1,6 @@
 # Jobscrap 
-Fetch and organize a job offer into a simple markdown resume
+Fetch and organize a job offer into a simple markdown resume\
+*the project is written for french users*
 
 ## Goal
 The goal of this project is to learn data science using Python Strategies structure.
@@ -10,8 +11,8 @@ Paste offers URLs inside a txt file named "urls.txt", then run the script with t
 ## Roadmap
 - [x] Make it work
 - [x] Save scraped data in a clean Markdown file
-- [ ] Define scraper structure (wip)
-- [ ] Welcome to the Jungle scraper (wip)
+- [x] Welcome to the Jungle scraper
+- [ ] PASS (Place de l'Apprentissage et des Stages) scraper (wip)
 - [ ] HelloWork scraper
 - [ ] Linkedin scraper
 
