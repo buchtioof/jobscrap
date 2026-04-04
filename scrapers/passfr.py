@@ -39,9 +39,9 @@ class PassScraper(ScraperStrategy):
 
         corp_div = soup.find('div', class_='field--name-field-description-de-l-employeur')
         if corp_div:
-            corp_item = corp_item.find('div', class_='field__item')
+            corp_item = corp_div.find('div', class_='field__item')
             if corp_item:
-                corp_detail = "\n\n".join(employeur_item.stripped_strings)
+                corp_detail = "\n\n".join(corp_item.stripped_strings)
 
         desc_div = soup.find('div', class_='field--name-field-description-du-poste')
         if desc_div:
@@ -53,7 +53,7 @@ class PassScraper(ScraperStrategy):
         if profile_div:
             profile_item = profile_div.find('div', class_='field__item')
             if profile_item:
-                profile = "\n\n".join(profil_item.stripped_strings)
+                profile = "\n\n".join(profile_item.stripped_strings)
 
         return {
             "title": offer,
