@@ -13,7 +13,24 @@ def main():
     orchestrator.register_strategy(PassScraper())
     
     # Give a URL
-    with open("urls.txt", "r") as f:
+    url = input("Entrez l'url de l'offre : ")
+
+    if url:
+        print(f"\nFetch offer content: {url}")
+
+        result = orchestrator.process_url(url)
+
+        directory = "output"
+        os.makedirs(directory, exist_ok=True)
+        filename = f"offer.md"
+        path = os.path.join(directory, filename)
+
+        with open(path, "w", encoding="utf-8") as mdfile:
+            mdfile.write(result)
+                
+        print(f"Offer have been saved successfully")
+
+"""     with open("urls.txt", "r") as f:
         for index, line in enumerate(f):
             url = line.strip()
             
@@ -30,7 +47,7 @@ def main():
                 with open(path, "w", encoding="utf-8") as mdfile:
                     mdfile.write(result)
                 
-                print(f"Offer have been saved successfully")
+                print(f"Offer have been saved successfully") """
 
 if __name__ == "__main__":
     main()
